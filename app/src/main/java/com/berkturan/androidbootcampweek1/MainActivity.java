@@ -6,12 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText IslemEditText,IslemEditText2;
     TextView SonucTextView;
-    Button ToplamaButton,CikarmaButton,CarpmaButton,BolmeButton;
+    Button ToplamaButton,CikarmaButton,CarpmaButton,BolmeButton,PowButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         CikarmaButton = findViewById(R.id.cikarmaButton);
         CarpmaButton = findViewById(R.id.carpmaButton);
         BolmeButton = findViewById(R.id.bolmeButton);
+        PowButton = findViewById(R.id.powButton);
         //Sonucumuzu bastıracağımız TextViewi tanımlıyoruz.
         SonucTextView=findViewById(R.id.sonucTextView);
         //Toplama islemi yaptırtmak icin ToplamaButton bileşenimize kod bloğumuzu giriyoruz
+
         ToplamaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +100,24 @@ public class MainActivity extends AppCompatActivity {
                     SonucTextView.setText(String.valueOf(sonuc));
                 }catch (Exception e){
                     SonucTextView.setText(e.getLocalizedMessage().toString());
+                }
+            }
+        });
+        PowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    //Kullanıcının EditTextlerimize girdiği verileri alıp değişkenlerimize tanımlıyoruz.
+                    double sayi1= Double.parseDouble(IslemEditText.getText().toString());
+                    double sayi2= Double.parseDouble(IslemEditText2.getText().toString());
+                    //EditTextlerimizi Temizliyoruz
+                    IslemEditText.setText("");
+                    IslemEditText2.setText("");
+                    //Islemimizi yaptırıp sonucumuzu bastırıyoruz
+                    double sonuc = Math.pow(sayi1,sayi2);
+                    SonucTextView.setText(String.valueOf(sonuc));
+                }catch (Exception e){
+                    SonucTextView.setText(e.getLocalizedMessage());
                 }
             }
         });

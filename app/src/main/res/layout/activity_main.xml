@@ -9,9 +9,11 @@
 
     <EditText
         android:id="@+id/sayi2EditText"
-        android:layout_width="364dp"
+        android:layout_width="0dp"
         android:layout_height="79dp"
-        android:layout_marginTop="134dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="242dp"
+        android:layout_marginEnd="4dp"
         android:ems="10"
         android:hint="Sayi2"
         android:inputType="numberDecimal"
@@ -21,34 +23,34 @@
 
     <EditText
         android:id="@+id/sayi1EditText"
-        android:layout_width="364dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="4dp"
         android:ems="10"
         android:hint="Sayi1"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/sayi2EditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/toplamaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="28dp"
         android:text="+"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sayi2EditText" />
+        app:layout_constraintBottom_toTopOf="@+id/carpmaButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cikarmaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
         android:text="-"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sayi2EditText" />
@@ -57,18 +59,18 @@
         android:id="@+id/carpmaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="20dp"
         android:text="X"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toplamaButton" />
+        app:layout_constraintBottom_toTopOf="@+id/powButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bolmeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="36dp"
         android:text="/"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cikarmaButton" />
@@ -77,11 +79,30 @@
         android:id="@+id/sonucTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
         android:text="Sonuc"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/powButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/app_logo" />
+
+    <Button
+        android:id="@+id/powButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="xⁿ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bolmeButton" />
+
 </android.support.constraint.ConstraintLayout>
